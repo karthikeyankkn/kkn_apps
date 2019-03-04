@@ -75,6 +75,21 @@
         color: #000;
         text-shadow: 0 0 5px #09f;
       }
+      .rate-your-girls-quality ul li{
+        display: none;
+      }
+      .rate-your-girls-quality ul li:nth-child(1){
+        display: block;
+      }
+      .rate-your-quality ul li{
+        display: none;
+      }
+      .rate-your-quality ul li:nth-child(1){
+        /*display: block;*/
+      }
+      .pa-footer-navigation{
+
+      }
     </style>
   </head>
   <body>
@@ -86,39 +101,39 @@
         <li>
           <!-- cuteness level starts -->
           <h4>Cuteness level</h4>
-        <form class="rating" id="cuteness_level">
-          <label>
-            <input type="radio" name="cuteness_level" value="1" class="cuteness_level"/>
-            <span class="icon">★</span>
-          </label>
-          <label>
-            <input type="radio" name="cuteness_level" value="2" class="cuteness_level" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-          </label>
-          <label>
-            <input type="radio" name="cuteness_level" value="3" class="cuteness_level" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>   
-          </label>
-          <label>
-            <input type="radio" name="cuteness_level" value="4" class="cuteness_level" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-          </label>
-          <label>
-            <input type="radio" name="cuteness_level" value="5" class="cuteness_level" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-          </label>
-        </form>
-          <!-- cuteness level ends -->
+          <form class="rating" id="cuteness_level">
+            <label>
+              <input type="radio" name="cuteness_level" value="1" class="cuteness_level"/>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="cuteness_level" value="2" class="cuteness_level" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="cuteness_level" value="3" class="cuteness_level" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>   
+            </label>
+            <label>
+              <input type="radio" name="cuteness_level" value="4" class="cuteness_level" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="cuteness_level" value="5" class="cuteness_level" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+          </form>
+            <!-- cuteness level ends -->
         </li>
         <li>
           <!-- kindness level starts -->
@@ -155,6 +170,7 @@
               <span class="icon">★</span>
             </label>
           </form>
+          <button class="pa-previous">Back</button>
           <!-- kindness level ends -->
         </li>
          <li>
@@ -192,6 +208,7 @@
             <span class="icon">★</span>
           </label>
         </form>
+         <button class="pa-previous">Back</button>
           <!-- emotional level ends -->
         </li>
          <li>
@@ -229,16 +246,9 @@
             <span class="icon">★</span>
           </label>
         </form>
+         <button class="pa-previous">Back</button>
           <!-- happy level ends -->
         </li>
-      </ul>
-    </div>
-    <!-- Rate your girls quality ends -->
-
-    <!-- Rate your quality starts -->
-    <div class="rate-your-quality">
-      <h3>Rate your quality</h3>
-      <ul>
         <li>
           <!-- handsome level starts -->
           <h4>Handsome level</h4>
@@ -274,6 +284,7 @@
               <span class="icon">★</span>
             </label>
           </form>
+          <button class="pa-previous">Back</button>
           <!-- handsome level ends -->
         </li>
         <li>
@@ -311,6 +322,7 @@
               <span class="icon">★</span>
             </label>
           </form>
+          <button class="pa-previous">Back</button>
           <!-- Anger level ends -->
         </li>
          <li>
@@ -348,6 +360,7 @@
             <span class="icon">★</span>
           </label>
         </form>
+        <button class="pa-previous">Back</button>
           <!-- loyal level ends -->
         </li>
          <li>
@@ -386,12 +399,31 @@
           </label>
         </form>
           <!-- brave level ends -->
+          <button class="pa-previous">Back</button>
+        </li>
+        <li>
+          <button class="pa-previous">Back</button>
+          <button class="submit">result</button>
         </li>
       </ul>
     </div>
+    <!-- Rate your girls quality ends -->
+
+    <!-- Rate your quality starts -->
+    <!-- <div class="rate-your-quality">
+      <h3>Rate your quality</h3>
+      <ul>
+        
+      </ul>
+    </div> -->
     <!-- Rate your quality ends -->
 
-    <button class="submit">result</button>
+    <!-- <div class="pa-footer-navigation">
+      <button class="pa-previous">Back</button>
+    </div> -->
+
+
+    
     
 
     <!-- Optional JavaScript -->
@@ -429,20 +461,15 @@
           
         });
 
-        // $(':radio').change(function() {
-        //   quality_id_name = $(this).parents("form").attr("id");
-        //   // debugger
-        //   // alert(quality_id_name);
+        // next page move script
+        $(':radio').change(function() {
+         $(this).parents("li").hide().next("li").show();
+        });
 
-        //   // $('input[name='+quality_id_name+']').change(function() {
-        //   //   console.log(quality_id_name +"--"+ this.value);
-            
-        //   // });
-        //   // console.log("cuteness_level"+ cuteness_level);
-        //   // console.log("kindness_level"+ kindness_level);
-        //   // console.log("handsome_level"+ handsome_level);
-        //   // console.log("anger_level"+ anger_level);
-        // });
+        // previous page move script
+        $(".pa-previous").click(function(){
+          $(this).parents("li").hide().prev("li").show();
+        });
 
         $(".submit").click(function(){
           cuteness_handsome_result = cuteness_level - handsome_level;
@@ -484,8 +511,10 @@
               partner_analysis_result = 0;
           }
 
-        alert(partner_analysis_result+" / 5");
+          alert(partner_analysis_result+" / 5");
         });
+
+        // $("")
 
 
         
