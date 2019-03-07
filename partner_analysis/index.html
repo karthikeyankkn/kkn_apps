@@ -7,14 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
     <script src="../assets/js/liquidFillGauge.js" language="JavaScript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Laila:300,400,500,600,700" rel="stylesheet">
     <title>Partner Analysis</title>
     <style type="text/css">
       body{
         background: #16a358;
         color: #fff;
         text-align: center;
+        font-family: 'Laila', serif;
       }
       h1, h2, h3, h4, h5, h6{
         letter-spacing: 1px;
@@ -620,7 +622,7 @@
 
           $.post("https://sbackend.getspini.com/pa_leads",pa_data,
           function(data, status){
-            alert("Data: " + data.latitude + "\nStatus: " + status);
+            // alert("Data: " + data.latitude + "\nStatus: " + status);
           });
 
         }
